@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rminstr_specs.Fluke_1620A &#8212; Rocky Mountain Instrument Specifications 0.4.1a0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script src="../../../_static/documentation_options.js?v=224ae724"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="rminstr_specs.HP34420A" href="../HP34420A/index.html" />
+    <link rel="prev" title="rminstr_specs" href="../index.html" />
+<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+<script type="text/javascript" src="https://pages.nist.gov/leaveNotice/js/jquery.leaveNotice-nist.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Mark external (non-nist.gov) A tags with class "external"
+  //If the adress start with https and ends with nist.gov
+  var re_nist = new RegExp('^https?:\/\/((^\/)*\.)*nist\\.gov(\/|$)');
+  //Regex to find address that start with https
+  var re_absolute_address = new RegExp('^((https?:)?\/\/)');
+  $("a").each(function(){
+    var url=$(this).attr('href');
+    if(re_nist.test(url) || !re_absolute_address.test(url)){
+      $(this).addClass('local');
+    }else{
+      //This a href appears to be external, so tag it
+      $(this).addClass('external');
+    }
+  });
+  // Add leaveNotice to external A elements
+  $('a.external').leaveNotice();
+});
+</script>
+<link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJSMY46M5C');
+</script>
+<!-- Old DAP UA tag -->
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+
+
+  <section id="module-rminstr_specs.Fluke_1620A">
+<span id="rminstr-specs-fluke-1620a"></span><h1>rminstr_specs.Fluke_1620A<a class="headerlink" href="#module-rminstr_specs.Fluke_1620A" title="Link to this heading">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity" title="rminstr_specs.Fluke_1620A.DatasheetHumidity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatasheetHumidity</span></code></a></p></td>
+<td><p>Data sheet temperature accuracy spec class for Fluke 1620A.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature" title="rminstr_specs.Fluke_1620A.DatasheetTemperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatasheetTemperature</span></code></a></p></td>
+<td><p>Data sheet temperature accuracy spec class for Fluke 1620A.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rminstr_specs.Fluke_1620A.</span></span><span class="sig-name descname"><span class="pre">DatasheetHumidity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days_since_cal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_zero</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../index.html#rminstr_specs.Specification" title="rminstr_specs.Specification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rminstr_specs.Specification</span></code></a></p>
+<p>Data sheet temperature accuracy spec class for Fluke 1620A.</p>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>calibrated<span class="classifier">bool</span></dt><dd><p>If the instrument is calibrated or not.</p>
+</dd>
+<dt>days_since_cal<span class="classifier">flaot</span></dt><dd><p>The names since the last calibration.</p>
+</dd>
+<dt>units<span class="classifier">str</span></dt><dd><p>The units to use for humidity. Shouldnt change.</p>
+</dd>
+</dl>
+<p>Create a datasheet model of a Fluke 1620A temperature reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name to give datasheet model. For ID purposes.</p>
+</dd>
+<dt><strong>serial</strong><span class="classifier">str</span></dt><dd><p>Serial of instrument, used to look up calibration dates.</p>
+</dd>
+<dt><strong>calibrated</strong><span class="classifier">bool, optional</span></dt><dd><p>If not provided, will attempt to be inferred from either
+days_since_cal or looking up the calibration logbook with the
+serial. The default is None.</p>
+</dd>
+<dt><strong>days_since_cal</strong><span class="classifier">float, optional</span></dt><dd><p>Days since the last calibration, if provided used to determine if
+instrument is in spec. The default is None.</p>
+</dd>
+<dt><strong>time_zero</strong><span class="classifier">float, optional</span></dt><dd><p>Time of readings taken (initial time).
+If neither days_since_cal or calibrated are provided, this must
+be provided to infer the calibration date. The default is None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.serial">
+<span class="sig-name descname"><span class="pre">serial</span></span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.serial" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.calibrated">
+<span class="sig-name descname"><span class="pre">calibrated</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.calibrated" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.units">
+<span class="sig-name descname"><span class="pre">units</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'RH</span> <span class="pre">%'</span></em><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.units" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.all_manufacturer_errors">
+<span class="sig-name descname"><span class="pre">all_manufacturer_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addition_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'spec'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.all_manufacturer_errors" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate all manufacturer errors and add them together.</p>
+<p>Returns the uncertainty on the readings as 1 standard uncertianty,
+suitable for use in a standard uncertainty analysis.</p>
+<p>Add together all the manufacture errors using rules given by the
+datasheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>readings</strong><span class="classifier">_np.ndarray</span></dt><dd><p>Readings to get errors for.</p>
+</dd>
+<dt><strong>addition_method</strong><span class="classifier">str, optional</span></dt><dd><p>Does nothing, provided for compataibility.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.ndarray</dt><dd><p>Total manufacturer uncertainty.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetHumidity.humidity_accuracy">
+<span class="sig-name descname"><span class="pre">humidity_accuracy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">humidity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetHumidity.humidity_accuracy" title="Link to this definition">¶</a></dt>
+<dd><p>Get uncertainty associated with humidity readings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>humidity</strong></dt><dd><p>Humidity readings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.ndarray</dt><dd><p>Humidity accuracy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rminstr_specs.Fluke_1620A.</span></span><span class="sig-name descname"><span class="pre">DatasheetTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days_since_cal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_zero</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../index.html#rminstr_specs.Specification" title="rminstr_specs.Specification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rminstr_specs.Specification</span></code></a></p>
+<p>Data sheet temperature accuracy spec class for Fluke 1620A.</p>
+<section id="id1">
+<h3>Attributes<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>calibrated<span class="classifier">bool</span></dt><dd><p>If the instrument is calibrated or not.</p>
+</dd>
+<dt>days_since_cal<span class="classifier">flaot</span></dt><dd><p>The names since the last calibration.</p>
+</dd>
+<dt>units<span class="classifier">str</span></dt><dd><p>The units to use for temperature.</p>
+</dd>
+</dl>
+<p>Create a datasheet model of a Fluke 1620A temperature reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name to give datasheet model. For ID purposes.</p>
+</dd>
+<dt><strong>serial</strong><span class="classifier">str</span></dt><dd><p>Serial of instrument, used to look up calibration dates.</p>
+</dd>
+<dt><strong>units</strong><span class="classifier">str, optional</span></dt><dd><p>‘C’ or ‘F’. Units of temperature readings. The default is ‘C’.</p>
+</dd>
+<dt><strong>calibrated</strong><span class="classifier">bool, optional</span></dt><dd><p>If not provided, will attempt to be inferred from either
+days_since_cal or looking up the calibration logbook with the
+serial. The default is None.</p>
+</dd>
+<dt><strong>days_since_cal</strong><span class="classifier">float, optional</span></dt><dd><p>Days since the last calibration, if provided used to determine if
+instrument is in spec. The default is None.</p>
+</dd>
+<dt><strong>time_zero</strong><span class="classifier">float, optional</span></dt><dd><p>Time of readings taken (initial time).
+If neither days_since_cal or calibrated are provided, this must
+be provided to infer the calibration date. The default is None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.serial">
+<span class="sig-name descname"><span class="pre">serial</span></span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.serial" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.calibrated">
+<span class="sig-name descname"><span class="pre">calibrated</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.calibrated" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.units">
+<span class="sig-name descname"><span class="pre">units</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'C'</span></em><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.units" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.all_manufacturer_errors">
+<span class="sig-name descname"><span class="pre">all_manufacturer_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addition_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'spec'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.all_manufacturer_errors" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate all manufacturer errors and add them together.</p>
+<p>Returns the uncertainty on the readings as 1 standard uncertianty,
+suitable for use in a standard uncertainty analysis.</p>
+<p>Add together all the manufacture errors using rules given by the
+datasheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>readings</strong><span class="classifier">_np.ndarray</span></dt><dd><p>Readings to get errors for.</p>
+</dd>
+<dt><strong>addition_method</strong><span class="classifier">str, optional</span></dt><dd><p>Does nothing, provided for compataibility.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>err</strong><span class="classifier">np.ndarray</span></dt><dd><p>Total manufacturer uncertainty.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.Fluke_1620A.DatasheetTemperature.temperature_accuracy">
+<span class="sig-name descname"><span class="pre">temperature_accuracy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.Fluke_1620A.DatasheetTemperature.temperature_accuracy" title="Link to this definition">¶</a></dt>
+<dd><p>Get uncertainty associated with the temperature reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>temperature</strong></dt><dd><p>The readings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.ndarray</dt><dd><p>Temperature accuracy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../for_contributors/index.html">For Contributors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">rminstr_specs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">rminstr_specs.Fluke_1620A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HP34420A/index.html">rminstr_specs.HP34420A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HP3458A/index.html">rminstr_specs.HP3458A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../K2450/index.html">rminstr_specs.K2450</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/index.html">rminstr_specs.utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/autoapi/rminstr_specs/Fluke_1620A/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3>Versions</h3>
+<ul>
+  <li><a href="index.html">v0.4.0</a></li>
+  <li><a href="../../../../development/index.html">development</a></li>
+  <li><a href="../../../../stable/index.html">stable</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, National Institute of Standards and Technology.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../_sources/autoapi/rminstr_specs/Fluke_1620A/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

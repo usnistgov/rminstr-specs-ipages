@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rminstr_specs.HP34420A &#8212; Rocky Mountain Instrument Specifications 0.4.1a0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script src="../../../_static/documentation_options.js?v=224ae724"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="rminstr_specs.HP3458A" href="../HP3458A/index.html" />
+    <link rel="prev" title="rminstr_specs.Fluke_1620A" href="../Fluke_1620A/index.html" />
+<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+  <script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+
+<script type="text/javascript" src="https://pages.nist.gov/leaveNotice/js/jquery.leaveNotice-nist.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Mark external (non-nist.gov) A tags with class "external"
+  //If the adress start with https and ends with nist.gov
+  var re_nist = new RegExp('^https?:\/\/((^\/)*\.)*nist\\.gov(\/|$)');
+  //Regex to find address that start with https
+  var re_absolute_address = new RegExp('^((https?:)?\/\/)');
+  $("a").each(function(){
+    var url=$(this).attr('href');
+    if(re_nist.test(url) || !re_absolute_address.test(url)){
+      $(this).addClass('local');
+    }else{
+      //This a href appears to be external, so tag it
+      $(this).addClass('external');
+    }
+  });
+  // Add leaveNotice to external A elements
+  $('a.external').leaveNotice();
+});
+</script>
+<link rel="stylesheet" type="text/css" href="https://pages.nist.gov/leaveNotice/css/jquery.leaveNotice.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJSMY46M5C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJSMY46M5C');
+</script>
+<!-- Old DAP UA tag -->
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+
+
+  <section id="module-rminstr_specs.HP34420A">
+<span id="rminstr-specs-hp34420a"></span><h1>rminstr_specs.HP34420A<a class="headerlink" href="#module-rminstr_specs.HP34420A" title="Link to this heading">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rminstr_specs.HP34420A.DatasheetDCV" title="rminstr_specs.HP34420A.DatasheetDCV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatasheetDCV</span></code></a></p></td>
+<td><p>Class that defines the current datasheet uncertainties for the HP 34420A.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rminstr_specs.HP34420A.</span></span><span class="sig-name descname"><span class="pre">DatasheetDCV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HP34420A'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days_since_cal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_ambient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">null</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_zero</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warnings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../index.html#rminstr_specs.Specification" title="rminstr_specs.Specification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rminstr_specs.Specification</span></code></a></p>
+<p>Class that defines the current datasheet uncertainties for the HP 34420A.</p>
+<p>This model assumes a uniform distribution between the datasheet ranges,
+the functions output the standard deviation (1/sqrt(3)) of the posted
+errors.</p>
+<p>Initialize instance of DCV datasheet specs of HP34420A.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str, optional,</span></dt><dd><p>Used in spec_manager to generate names for uncertainty mechanisms.
+Used for identifying instruments in warnings. The default is ‘HP34420A’.</p>
+</dd>
+<dt><strong>serial</strong><span class="classifier">str, optional</span></dt><dd><p>Serial of instrument. Used to identify calibration history in
+log books. The default is ‘NA’.</p>
+</dd>
+<dt><strong>v_range</strong><span class="classifier">float, optional</span></dt><dd><p>Voltage measurement range. The default is None.</p>
+</dd>
+<dt><strong>days_since_cal</strong><span class="classifier">float, optional</span></dt><dd><p>Days since the last calibration. The default is None.</p>
+</dd>
+<dt><strong>t_ambient</strong><span class="classifier">float, optional</span></dt><dd><p>Ambient temperature of measurement. The default is None.</p>
+</dd>
+<dt><strong>null</strong><span class="classifier">bool, optional</span></dt><dd><p>True if instrument was nulled prior to measurement.
+The default is False.</p>
+</dd>
+<dt><strong>time_zero</strong><span class="classifier">str,</span></dt><dd><p>Used as comparison time when trying to infer days since cal from
+logbook.</p>
+</dd>
+<dt><strong>suppress_warnings</strong><span class="classifier">bool, optional</span></dt><dd><p>Suppress warning output to the console. The default is False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.components">
+<span class="sig-name descname"><span class="pre">components</span></span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.components" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.v_range">
+<span class="sig-name descname"><span class="pre">v_range</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.v_range" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.days_since_cal">
+<span class="sig-name descname"><span class="pre">days_since_cal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.days_since_cal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.t_ambient">
+<span class="sig-name descname"><span class="pre">t_ambient</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.t_ambient" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.null">
+<span class="sig-name descname"><span class="pre">null</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.null" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.temp_out_of_spec">
+<span class="sig-name descname"><span class="pre">temp_out_of_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.temp_out_of_spec" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.all_manufacturer_errors">
+<span class="sig-name descname"><span class="pre">all_manufacturer_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addition_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'spec'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.all_manufacturer_errors" title="Link to this definition">¶</a></dt>
+<dd><p>Return the sum of all manufacturer errors for readings.</p>
+<p>Ensure that errors are added in the way specified by the data sheet,
+if provided. The default is spec unless overridden by a child class.</p>
+<p>if spec, it will use linear since the spec sheet does not specify
+if linear, it will add linearly
+if quadrature, it will add in quadrature</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>readings</strong><span class="classifier">_np.ndarray</span></dt><dd><p>Array of measurements to get uncertainties for.</p>
+</dd>
+<dt><strong>addition_method</strong><span class="classifier">str, optional</span></dt><dd><p>Specifies how the errors are added together. Linear will add all the standard deviations linearly,
+whereas quad will do a quadrature sum. Linear will give a worst case. Setting this to ‘spec’ will
+do whatever the specsheet says if stated, otherwise it will revert to linear. The default is ‘spec’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.ndarray</dt><dd><p>Array of manufacturer errors of same shape as readings.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.accuracy_offset">
+<span class="sig-name descname"><span class="pre">accuracy_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.accuracy_offset" title="Link to this definition">¶</a></dt>
+<dd><p>Get the offset accuracy errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.accuracy_slope">
+<span class="sig-name descname"><span class="pre">accuracy_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.accuracy_slope" title="Link to this definition">¶</a></dt>
+<dd><p>Get the slope accuracy errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.temperature_coef_offset">
+<span class="sig-name descname"><span class="pre">temperature_coef_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.temperature_coef_offset" title="Link to this definition">¶</a></dt>
+<dd><p>Get the temperature coefficient errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rminstr_specs.HP34420A.DatasheetDCV.temperature_coef_slope">
+<span class="sig-name descname"><span class="pre">temperature_coef_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rminstr_specs.HP34420A.DatasheetDCV.temperature_coef_slope" title="Link to this definition">¶</a></dt>
+<dd><p>Get the temperature coefficient slope errors.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../auto_examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../for_contributors/index.html">For Contributors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">rminstr_specs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Fluke_1620A/index.html">rminstr_specs.Fluke_1620A</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">rminstr_specs.HP34420A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HP3458A/index.html">rminstr_specs.HP3458A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../K2450/index.html">rminstr_specs.K2450</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/index.html">rminstr_specs.utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/autoapi/rminstr_specs/HP34420A/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3>Versions</h3>
+<ul>
+  <li><a href="../../../../v0.4.0/index.html">v0.4.0</a></li>
+  <li><a href="index.html">development</a></li>
+  <li><a href="../../../../stable/index.html">stable</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, National Institute of Standards and Technology.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../_sources/autoapi/rminstr_specs/HP34420A/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

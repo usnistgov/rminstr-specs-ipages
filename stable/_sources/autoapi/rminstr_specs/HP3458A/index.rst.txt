@@ -1,0 +1,810 @@
+rminstr_specs.HP3458A
+=====================
+
+.. py:module:: rminstr_specs.HP3458A
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   rminstr_specs.HP3458A.DatasheetDCI
+   rminstr_specs.HP3458A.DatasheetDCV
+   rminstr_specs.HP3458A.DatasheetDCOhm
+
+
+Package Contents
+----------------
+
+.. py:class:: DatasheetDCI(name: str = 'HP3458ADCI', serial: str = 'NA', i_range: float = None, days_since_cal: int = None, delta_t_cal=None, acal: bool = None, time_zero: float = None, nplc: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Class that defines the current datasheet uncertainties for the HP3458A.
+
+   This model assumes a uniform distribution between the datasheet ranges,
+   the functions output the standard deviation (1/sqrt(3)) of the posted
+   errors.
+
+
+
+   Initialize instance of DCV datasheet specs of HP3458A.
+
+
+   :Parameters:
+
+       **name** : str,
+           Used in spec_manager to generate names for uncertainty mechanisms.
+           Used for identifying instruments in warnings. The default is 'HP3458ADCI'.
+
+       **serial** : str,
+           Serial of instrument. Used to identify calibration history in
+           log books. The default is 'NA'.
+
+       **i_range** : float, optional
+           Current measurement range. The default is None.
+
+       **days_since_cal** : int, optional
+           Days since the last calibration. The default is None.
+
+       **delta_t_cal** : float, optional
+           Ambient temperature of measurement. The default is None.
+
+       **acal** : bool, optional
+           Whether or not the instrument was autocalibrated before measurements. The default is None.
+
+       **time_zero: float, optional**
+           Used as comparison time when trying to infer days since cal from
+           logbook.
+
+       **nplc: float, optional**
+           Power lince cycle integrations. Default is None.
+
+       **suppress_warnings** : bool, optional
+           Suppress warning output to the console. The default is False
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: i_range
+      :value: None
+
+
+
+   .. py:attribute:: days_since_cal
+      :value: None
+
+
+
+   .. py:attribute:: delta_t_cal
+      :value: None
+
+
+
+   .. py:attribute:: acal
+      :value: None
+
+
+
+   .. py:attribute:: nplc
+      :value: None
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Calculate all manufacturer errors and add them together.
+
+      Add together all the manufacture errors using rules given by the
+      datasheet.
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Readings to get errors for.
+
+          **addition_method** : str, optional
+              Specifies how the errors are added together. Linear will add all the standard deviations linearly,
+              whereas quad will do a quadrature sum. Linear will give a worst case. Setting this to 'spec' will
+              do whatever the specsheet says if stated, otherwise it will revert to linear. The default is 'spec'.
+
+
+
+      :Returns:
+
+          **err** : np.ndarray
+              Total manufacturer errors.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_offset(readings: numpy.ndarray)
+
+      
+      Get the offset accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_slope(readings: numpy.ndarray)
+
+      
+      Get the slope accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_offset(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_slope(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient slope errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: powerline_cycles(readings: numpy.ndarray)
+
+      
+      Get errors associates with powerline cycle readings
+
+      This is specific as Root mean square of noise, so presumably k=1 uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: DatasheetDCV(name: str = 'HP3458ADCV', serial: str = 'NA', v_range: float = None, days_since_cal: int = None, delta_t_cal: float = None, acal: bool = None, time_zero: float = None, nplc: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Class that defines the datasheet uncertainties for the HP3458A.
+
+   This model assumes a uniform distribution between the datasheet ranges,
+   the functions output the standard deviation (1/sqrt(3)) of the posted
+   errors.
+
+
+
+   Initialize instance of DCV datasheet specs of HP3458A.
+
+
+   :Parameters:
+
+       **name** : str,
+           Used in spec_manager to generate names for uncertainty mechanisms.
+           Used for identifying instruments in warnings. The default is 'HP3458ADCV'
+
+       **serial** : str,
+           Serial of instrument. Used to identify calibration history in
+           log books. The default is 'NA'
+
+       **v_range** : float, optional
+           Current measurement range. The default is None.
+
+       **days_since_cal** : int, optional
+           Days since the last calibration. The default is None.
+
+       **delta_t_cal** : float, optional
+           Ambient temperature of measurement. The default is None.
+
+       **acal** : bool, optional
+           Whether or not the instrument was auto calibrated before measurements. The default is None.
+
+       **time_zero** : float, optional
+           Used as comparison time when trying to infer days since cal from
+           logbook
+
+       **nplc** : float, optional
+           Power lince cycle integrations. Default is None.
+
+       **suppress_warnings** : bool, optional
+           Suppress warning output to the console. The default is False
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: v_range
+      :value: None
+
+
+
+   .. py:attribute:: days_since_cal
+      :value: None
+
+
+
+   .. py:attribute:: delta_t_cal
+      :value: None
+
+
+
+   .. py:attribute:: acal
+      :value: None
+
+
+
+   .. py:attribute:: nplc
+      :value: None
+
+
+
+   .. py:attribute:: suppress_warnings
+      :value: False
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Return the sum of all manufacturer errors for readings.
+
+      Ensure that errors are added in the way specified by the data sheet,
+      if provided. The default is spec unless overridden by a child class.
+
+      if spec, it will use the spec sheet addition which is linear
+      if linear, it will add linearly
+      if quadrature, it will add in quadrature
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Array of measurements to get uncertainties for.
+
+          **addition_method** : str, optional
+              Specifies how the errors are added together. Linear will add all the standard deviations linearly,
+              whereas quad will do a quadrature sum. Linear will give a worst case. Setting this to 'spec' will
+              do whatever the specsheet says if stated, otherwise it will revert to linear. The default is 'spec'.
+
+
+
+      :Returns:
+
+          np.ndarray
+              Array of manufacturer errors of same shape as readings.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_offset(readings: numpy.ndarray)
+
+      
+      Get the offset accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_slope(readings: numpy.ndarray)
+
+      
+      Get the slope accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_offset(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_slope(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient slope errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: powerline_cycles(readings: numpy.ndarray)
+
+      
+      Get errors associates with powerline cycle readings
+
+      This is specifiec as Root mean square of noise, so presumably k=1 uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: DatasheetDCOhm(name: str = 'HP3458ADCI', serial: str = 'NA', ohm_range: float = None, days_since_cal: int = None, delta_t_cal=None, acal: bool = None, time_zero: float = None, nplc: float = None, wires: int = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Class that defines the current datasheet uncertainties for the HP3458A.
+
+   This model assumes a uniform distribution between the datasheet ranges,
+   the functions output the standard deviation (1/sqrt(3)) of the posted
+   errors.
+
+
+
+   Initialize instance of DCV datasheet specs of HP3458A.
+
+
+   :Parameters:
+
+       **name** : str,
+           Used in spec_manager to generate names for uncertainty mechanisms.
+           Used for identifying instruments in warnings. The default is 'HP3458ADCI'.
+
+       **serial** : str,
+           Serial of instrument. Used to identify calibration history in
+           log books. The default is 'NA'.
+
+       **ohm_range** : float, optional
+           Current measurement range. The default is None.
+
+       **days_since_cal** : int, optional
+           Days since the last calibration. The default is None.
+
+       **delta_t_cal** : float, optional
+           Ambient temperature of measurement. The default is None.
+
+       **acal** : bool, optional
+           Whether or not the instrument was auto calibrated before measurements. The default is None.
+
+       **time_zero: float, optional**
+           Used as comparison time when trying to infer days since cal from
+           logbook.
+
+       **nplc: float, optional**
+           Power line cycle integrations. Default is None.
+
+       **wires: int, optional**
+           How many wires measured with. The default is 2.
+
+       **suppress_warnings** : bool, optional
+           Suppress warning output to the console. The default is False
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: i_range
+      :value: None
+
+
+
+   .. py:attribute:: days_since_cal
+      :value: None
+
+
+
+   .. py:attribute:: delta_t_cal
+      :value: None
+
+
+
+   .. py:attribute:: acal
+      :value: None
+
+
+
+   .. py:attribute:: nplc
+      :value: None
+
+
+
+   .. py:attribute:: wires
+      :value: None
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Calculate all manufacturer errors and add them together.
+
+      Add together all the manufacture errors using rules given by the
+      datasheet.
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Readings to get errors for.
+
+          **addition_method** : str, optional
+              Specifies how the errors are added together. Linear will add all the standard deviations linearly,
+              whereas quad will do a quadrature sum. Linear will give a worst case. Setting this to 'spec' will
+              do whatever the specsheet says if stated, otherwise it will revert to linear. The default is 'spec'.
+
+
+
+      :Returns:
+
+          **err** : np.ndarray
+              Total manufacturer errors.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_offset(readings: numpy.ndarray)
+
+      
+      Get the offset accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_2wire(readings: numpy.array)
+
+
+   .. py:method:: accuracy_slope(readings: numpy.ndarray)
+
+      
+      Get the slope accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_offset(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_slope(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient slope errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: powerline_cycles(readings: numpy.ndarray)
+
+      
+      Get errors associates with powerline cycle readings
+
+      This is specific as Root mean square of noise, so presumably k=1 uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
