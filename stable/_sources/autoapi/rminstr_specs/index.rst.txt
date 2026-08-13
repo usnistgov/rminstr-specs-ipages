@@ -13,6 +13,7 @@ Submodules
    /autoapi/rminstr_specs/Fluke_1620A/index
    /autoapi/rminstr_specs/HP34420A/index
    /autoapi/rminstr_specs/HP3458A/index
+   /autoapi/rminstr_specs/K2401/index
    /autoapi/rminstr_specs/K2450/index
    /autoapi/rminstr_specs/utilities/index
 

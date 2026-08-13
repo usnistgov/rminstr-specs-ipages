@@ -1,0 +1,58 @@
+rminstr_specs.utilities.importer
+================================
+
+.. py:module:: rminstr_specs.utilities.importer
+
+.. autoapi-nested-parse::
+
+   Importer utilities for calorimeter-python.
+
+   ..
+       !! processed by numpydoc !!
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   rminstr_specs.utilities.importer.import_specs
+
+
+Module Contents
+---------------
+
+.. py:function:: import_specs(model_name: str, functionality: str) -> type
+
+   
+   Import an instrument model/functionality by string.
+
+
+   :Parameters:
+
+       **model_name** : str
+           Name of of instrument model to import the spec sheet of.
+
+       **functionality** : str
+           Name of measurement functionality to import, this is the spec sheet so DatasheetDCV for example.
+
+
+
+   :Returns:
+
+       Specification
+           Specification class.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

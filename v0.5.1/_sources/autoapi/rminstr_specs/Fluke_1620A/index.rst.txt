@@ -1,0 +1,329 @@
+rminstr_specs.Fluke_1620A
+=========================
+
+.. py:module:: rminstr_specs.Fluke_1620A
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   rminstr_specs.Fluke_1620A.DatasheetHumidity
+   rminstr_specs.Fluke_1620A.DatasheetTemperature
+
+
+Package Contents
+----------------
+
+.. py:class:: DatasheetHumidity(name: str, serial: str, calibrated: bool = None, days_since_cal: float = None, time_zero: float = None)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Data sheet temperature accuracy spec class for Fluke 1620A.
+
+   Attributes
+   ----------
+   calibrated : bool
+       If the instrument is calibrated or not.
+
+   days_since_cal : flaot
+       The names since the last calibration.
+
+   units : str
+       The units to use for humidity. Shouldnt change.
+
+
+
+   Create a datasheet model of a Fluke 1620A temperature reading.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to give datasheet model. For ID purposes.
+
+       **serial** : str
+           Serial of instrument, used to look up calibration dates.
+
+       **calibrated** : bool, optional
+           If not provided, will attempt to be inferred from either
+           days_since_cal or looking up the calibration logbook with the
+           serial. The default is None.
+
+       **days_since_cal** : float, optional
+           Days since the last calibration, if provided used to determine if
+           instrument is in spec. The default is None.
+
+       **time_zero** : float, optional
+           Time of readings taken (initial time).
+           If neither days_since_cal or calibrated are provided, this must
+           be provided to infer the calibration date. The default is None.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: name
+
+
+   .. py:attribute:: serial
+
+
+   .. py:attribute:: calibrated
+      :value: None
+
+
+
+   .. py:attribute:: units
+      :value: 'RH %'
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Calculate all manufacturer errors and add them together.
+
+      Returns the uncertainty on the readings as 1 standard uncertianty,
+      suitable for use in a standard uncertainty analysis.
+
+      Add together all the manufacture errors using rules given by the
+      datasheet.
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Readings to get errors for.
+
+          **addition_method** : str, optional
+              Does nothing, provided for compataibility.
+
+
+
+      :Returns:
+
+          np.ndarray
+              Total manufacturer uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: humidity_accuracy(humidity)
+
+      
+      Get uncertainty associated with humidity readings.
+
+
+      :Parameters:
+
+          **humidity**
+              Humidity readings.
+
+
+
+      :Returns:
+
+          np.ndarray
+              Humidity accuracy.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: DatasheetTemperature(name: str, serial: str, units: str = 'C', calibrated: bool = None, days_since_cal: float = None, time_zero: float = None)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Data sheet temperature accuracy spec class for Fluke 1620A.
+
+   Attributes
+   ----------
+   calibrated : bool
+       If the instrument is calibrated or not.
+
+   days_since_cal : flaot
+       The names since the last calibration.
+
+   units : str
+       The units to use for temperature.
+
+
+
+   Create a datasheet model of a Fluke 1620A temperature reading.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to give datasheet model. For ID purposes.
+
+       **serial** : str
+           Serial of instrument, used to look up calibration dates.
+
+       **units** : str, optional
+           'C' or 'F'. Units of temperature readings. The default is 'C'.
+
+       **calibrated** : bool, optional
+           If not provided, will attempt to be inferred from either
+           days_since_cal or looking up the calibration logbook with the
+           serial. The default is None.
+
+       **days_since_cal** : float, optional
+           Days since the last calibration, if provided used to determine if
+           instrument is in spec. The default is None.
+
+       **time_zero** : float, optional
+           Time of readings taken (initial time).
+           If neither days_since_cal or calibrated are provided, this must
+           be provided to infer the calibration date. The default is None.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: name
+
+
+   .. py:attribute:: serial
+
+
+   .. py:attribute:: calibrated
+      :value: None
+
+
+
+   .. py:attribute:: units
+      :value: 'C'
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Calculate all manufacturer errors and add them together.
+
+      Returns the uncertainty on the readings as 1 standard uncertianty,
+      suitable for use in a standard uncertainty analysis.
+
+      Add together all the manufacture errors using rules given by the
+      datasheet.
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Readings to get errors for.
+
+          **addition_method** : str, optional
+              Does nothing, provided for compataibility.
+
+
+
+      :Returns:
+
+          **err** : np.ndarray
+              Total manufacturer uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_accuracy(temperature)
+
+      
+      Get uncertainty associated with the temperature reading.
+
+
+      :Parameters:
+
+          **temperature**
+              The readings.
+
+
+
+      :Returns:
+
+          np.ndarray
+              Temperature accuracy.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

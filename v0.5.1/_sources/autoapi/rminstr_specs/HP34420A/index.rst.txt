@@ -1,0 +1,251 @@
+rminstr_specs.HP34420A
+======================
+
+.. py:module:: rminstr_specs.HP34420A
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   rminstr_specs.HP34420A.DatasheetDCV
+
+
+Package Contents
+----------------
+
+.. py:class:: DatasheetDCV(name: str = 'HP34420A', serial: str = 'NA', v_range: float = None, days_since_cal: float = None, t_ambient: float = None, null: bool = None, time_zero: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`rminstr_specs.Specification`
+
+
+   Class that defines the current datasheet uncertainties for the HP 34420A.
+
+   This model assumes a uniform distribution between the datasheet ranges,
+   the functions output the standard deviation (1/sqrt(3)) of the posted
+   errors.
+
+
+
+   Initialize instance of DCV datasheet specs of HP34420A.
+
+
+   :Parameters:
+
+       **name** : str, optional,
+           Used in spec_manager to generate names for uncertainty mechanisms.
+           Used for identifying instruments in warnings. The default is 'HP34420A'.
+
+       **serial** : str, optional
+           Serial of instrument. Used to identify calibration history in
+           log books. The default is 'NA'.
+
+       **v_range** : float, optional
+           Voltage measurement range. The default is None.
+
+       **days_since_cal** : float, optional
+           Days since the last calibration. The default is None.
+
+       **t_ambient** : float, optional
+           Ambient temperature of measurement. The default is None.
+
+       **null** : bool, optional
+           True if instrument was nulled prior to measurement.
+           The default is False.
+
+       **time_zero** : str,
+           Used as comparison time when trying to infer days since cal from
+           logbook.
+
+       **suppress_warnings** : bool, optional
+           Suppress warning output to the console. The default is False.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: v_range
+      :value: None
+
+
+
+   .. py:attribute:: days_since_cal
+      :value: None
+
+
+
+   .. py:attribute:: t_ambient
+      :value: None
+
+
+
+   .. py:attribute:: null
+      :value: None
+
+
+
+   .. py:attribute:: temp_out_of_spec
+      :value: True
+
+
+
+   .. py:method:: all_manufacturer_errors(readings: numpy.ndarray, addition_method: str = 'spec')
+
+      
+      Return the sum of all manufacturer errors for readings.
+
+      Ensure that errors are added in the way specified by the data sheet,
+      if provided. The default is spec unless overridden by a child class.
+
+      if spec, it will use linear since the spec sheet does not specify
+      if linear, it will add linearly
+      if quadrature, it will add in quadrature
+
+      :Parameters:
+
+          **readings** : _np.ndarray
+              Array of measurements to get uncertainties for.
+
+          **addition_method** : str, optional
+              Specifies how the errors are added together. Linear will add all the standard deviations linearly,
+              whereas quad will do a quadrature sum. Linear will give a worst case. Setting this to 'spec' will
+              do whatever the specsheet says if stated, otherwise it will revert to linear. The default is 'spec'.
+
+
+
+      :Returns:
+
+          np.ndarray
+              Array of manufacturer errors of same shape as readings.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_offset(readings: numpy.ndarray)
+
+      
+      Get the offset accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: accuracy_slope(readings: numpy.ndarray)
+
+      
+      Get the slope accuracy errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_offset(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: temperature_coef_slope(readings: numpy.ndarray)
+
+      
+      Get the temperature coefficient slope errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

@@ -1,0 +1,248 @@
+rminstr_specs.K2450
+===================
+
+.. py:module:: rminstr_specs.K2450
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   rminstr_specs.K2450.DatasheetMeasureDCV
+   rminstr_specs.K2450.DatasheetMeasureDCI
+   rminstr_specs.K2450.DatasheetSourceDCI
+   rminstr_specs.K2450.DatasheetSourceDCV
+
+
+Package Contents
+----------------
+
+.. py:class:: DatasheetMeasureDCV(name: str, serial: str, v_range: float = None, days_since_cal: float = None, t_ambient: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`_k2450_datasheet`, :py:obj:`rminstr_specs.Specification`
+
+
+   DC Voltage Measure class of K2450 datasheet spec.
+
+
+   Initialize a DC voltage measure datasheet spec of K2450.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to attach to instance.
+
+       **serial** : str
+           Serial of the K2450.
+
+       **v_range** : float, optional
+           Current range. The default is 'auto'.
+
+       **days_since_cal** : float, optional
+           Days since cal. The default is 365.
+
+       **t_ambient** : float, optional
+           Ambient temperature at time of measurement. The default is 26 C.
+
+       **suppress_warnings**
+           Suppress warning output to the console. The default is False.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: v_range
+      :value: None
+
+
+
+.. py:class:: DatasheetMeasureDCI(name: str, serial: str, i_range: float = None, days_since_cal: float = None, t_ambient: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`_k2450_datasheet`, :py:obj:`rminstr_specs.Specification`
+
+
+   DC Current Measure class of K2450 datasheet spec.
+
+
+   Intialize a DC current measuring datasheet spec of K2450.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to attach to instance.
+
+       **serial** : str
+           Serial of the K2450.
+
+       **i_range** : float, optional
+           Current range. The default is 'auto'.
+
+       **days_since_cal** : float, optional
+           Days since cal. The default is 365.
+
+       **t_ambient** : float, optional
+           Ambient temperature at time of measurement. The default is 26 C.
+
+       **suppress_warnings**
+           Suppress warning output to the console. The default is False.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: i_range
+      :value: None
+
+
+
+.. py:class:: DatasheetSourceDCI(name: str, serial: str, i_range: float = None, days_since_cal: float = None, t_ambient: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`_k2450_datasheet`, :py:obj:`rminstr_specs.Specification`
+
+
+   DC Current Source class of K2450 datasheet spec.
+
+
+   Intialize a DC current sourcing spec of K2450 datasheet.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to attach to instance.
+
+       **serial** : str
+           Serial of the K2450.
+
+       **i_range** : float, optional
+           Current range. The default is 'auto'.
+
+       **days_since_cal** : float, optional
+           Days since cal. The default is 365.
+
+       **t_ambient** : float, optional
+           Ambient temperature at time of measurement. The default is 26 C.
+
+       **suppress_warnings**
+           Suppress warning output to the console. The default is False.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: i_range
+      :value: None
+
+
+
+.. py:class:: DatasheetSourceDCV(name: str, serial: str, v_range: float = None, days_since_cal: float = None, t_ambient: float = None, suppress_warnings: bool = False, **kwargs)
+
+   Bases: :py:obj:`_k2450_datasheet`, :py:obj:`rminstr_specs.Specification`
+
+
+   DC Voltage Source class of K2450 datasheet spec.
+
+
+   Intialize a DC voltage sourcing datasheet spec of K2450.
+
+
+   :Parameters:
+
+       **name** : str
+           Name to attach to instance.
+
+       **serial** : str
+           Serial of the K2450.
+
+       **v_range** : float, optional
+           Current range. The default is 'auto'.
+
+       **days_since_cal** : float, optional
+           Days since cal. The default is 365.
+
+       **t_ambient** : float, optional
+           Ambient temperature at time of measurement. The default is 26 C.
+
+       **suppress_warnings**
+           Suppress warning output to the console. The default is False.
+
+
+
+   :Returns:
+
+       None.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+   .. py:attribute:: v_range
+      :value: None
+
+
+
